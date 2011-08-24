@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.SimpleCursorAdapter;
 
 /**
  * ListActivity that will display the Holidays in the HolidayProvider
@@ -42,28 +41,7 @@ public class HolidayListViewActivity extends ListActivity {
 				null, //selectionArgs, 
 				null); //sortOrder
 		
-		int viewResourceId = R.layout.row_with_3_items;
-		String[] fromColumns = new String[] {
-				HolidayProviderMetaData.HolidayTableMetaData._ID, 
-				HolidayProviderMetaData.HolidayTableMetaData.HOLIDAY, 
-				HolidayProviderMetaData.HolidayTableMetaData.MONTH, 
-				HolidayProviderMetaData.HolidayTableMetaData.DAY_IN_MONTH, 
-				HolidayProviderMetaData.HolidayTableMetaData.SAME_DATE_EVERY_YEAR,
-				HolidayProviderMetaData.HolidayTableMetaData.OCCURS_ON, 
-				HolidayProviderMetaData.HolidayTableMetaData.APPROX_ORDINAL_DATE
-				};
-		int[] toTextViews = new int[] { 
-				R.id.textView1, 
-				R.id.textView2, 
-				R.id.textView3, 
-				R.id.textView4, 
-				R.id.textView5, 
-				R.id.textView6, 
-				R.id.textView7
-				};
-		SimpleCursorAdapter holidayAdapter = new SimpleCursorAdapter(this, viewResourceId, 
-				holidayCursor, fromColumns, toTextViews);
-		setListAdapter(holidayAdapter);  // Magic function for a ListActivity to set the adapter
+		// TODO: Create a SimpleCursorAdapter to display data using the holidayCursor
 	}
 
 	@Override
